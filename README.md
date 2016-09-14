@@ -1,5 +1,7 @@
 # bdaybot
 
+[![Join the chat at https://gitter.im/bdaybot/Lobby](https://badges.gitter.im/bdaybot/Lobby.svg)](https://gitter.im/bdaybot/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a bot that will like and comment 'Thank you' on all the birthday posts posted on your timeline.
 It uses Selenium to automate facebook login and successively locating the birthday posts using web scrapping. The project is under heavy development.
 ***
