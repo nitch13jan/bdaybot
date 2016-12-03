@@ -6,12 +6,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 
-'''
+
 email=raw_input("Enter Email ID/ Phone number:")
 passw=raw_input("Enter Password:")
-'''
-email="jsnow5242@gmail.com";
-passw="johnsnow007";
 
 driver = webdriver.Firefox()
 driver.get("http://www.facebook.com")
