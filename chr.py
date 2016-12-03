@@ -35,22 +35,13 @@ posts=[]
 try:
     posts=WebDriverWait(driver,delay).until(EC.presence_of_element_located((By.CLASS_NAME,'userContentWrapper')))
     posts=driver.find_elements_by_class_name('userContentWrapper')
-    print posts
     time.sleep(15)
     for post in posts:
         post_text=post.find_element_by_xpath(".//div[@class='_5pbx userContent']").text
-        print post_text
         time.sleep(3)
         if(post_text.find("day")!=-1 or post_text.find("Day")!=-1 or post_text.find("DAY")!=-1):
                 post.find_element_by_xpath(".//a[@class='UFILikeLink _4x9- _4x9_ _48-k']").click()
-        '''
-    print posts
-    for post in posts:
-        post_text=post.find_element_by_xpath(".//div[@class='_58jw']").text
-        if(post_text=="Birthday"):
-            post.find_element_by_xpath(".//div[@class='UFILikeLink']").click()
-    print "All relevant posts liked"
-    '''
+    print "Successfully liked relevant posts"
 except TimeoutException:
     print "Timeout"
         
