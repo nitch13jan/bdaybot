@@ -7,18 +7,17 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 
 
-email=raw_input("Enter Email ID/ Phone number:")
-passw=raw_input("Enter Password:")
+
 
 driver = webdriver.Firefox()
 driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys(email)
+elem.send_keys("bdaybottest@gmail.com")
 elem = driver.find_element_by_name("pass")
 elem.clear()
-elem.send_keys(passw)
+elem.send_keys("12345679")
 elem.send_keys(Keys.RETURN)
 delay = 100
 
