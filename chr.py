@@ -6,12 +6,12 @@ driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys("8768884446")
-elem.send_keys(Keys.RETURN)
+elem.send_keys("mobile-no")
+#elem.send_keys(Keys.RETURN)
 
 elem = driver.find_element_by_name("pass")
 elem.clear()
-elem.send_keys("")
+elem.send_keys("password")
 elem.send_keys(Keys.RETURN)
 elem.clear()
 
