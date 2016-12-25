@@ -11,6 +11,7 @@ This could have required no use of Selenium, and could have been done by using F
 
 - [x]  Automate facebook login
 - [ ]  Locate Bdday posts from the user's wall, iterate over them, like and comment.
+- [ ]  Take the username and password during the process.
 - [ ]  Convert above into an extension or a web-app
 - [ ]  Launch it as an .exe file for windows
 
@@ -21,3 +22,8 @@ This could have required no use of Selenium, and could have been done by using F
 Never push from master. Try creating a new branch on your local and push from the said branch.
 
 Any suggestions or contributions are welcome!
+
+##Language:
+
+* JAVA ( Class can be found in folder bdaybot ).
+* Python3 ( firefox.py is in Python 3 ). 
