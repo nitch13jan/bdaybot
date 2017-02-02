@@ -1,6 +1,8 @@
+import os
 from selenium import webdriver
 import time
 import random
+import linecache
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,18 +12,47 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotVisibleException
 
 #print("Welcome! Kindly fill the \nrequired fields for login when it loads\nand press the login button")
-print("opening site.....")
+#for colorful shells
+def msg(stat):
+    print '\033[1;42m'+'\033[1;37m'+stat+'\033[1;m'+'\033[1;m'
+if os.path.getsize('log.txt') == 0:
+    msg('input username')
+    domain = raw_input()
+    msg('input password')
+    domain1 = raw_input()
+"""else:
+    msg('enter 0 to login with old username & password\n')
+    msg('enter 1 to login with new username & password\n')
+    d2 = raw_input()
+    print d2
+if d2 == 0:
+    print d2
+    domain = linecache.getline('log.txt', 1)
+    domain1 = linecache.getline('log.txt', 2)
+if d2 == 1:
+    msg('input username')
+    domain = raw_input()
+    msg('input password')
+    domain1 = raw_input()
+    f = open("separate_text.py",'w')
+    line[0]=domain + "\n"
+    line[1]=domain1 + "\n"
+    f.close()
+        
 
+print d2
+"""
+print("opening site.....")
 driver = webdriver.Firefox()
 driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 time.sleep(5)
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys("botbday@gmail.com")
+elem.send_keys(domain)
 elem = driver.find_element_by_name("pass")
 elem.clear()
-elem.send_keys("botbday56"+Keys.RETURN)
+elem.send_keys("domain1"+Keys.RETURN)
 #print("Please Enter Your Username and Password there and\n press the login button...... (30 sec wait time) ")
 elem.send_keys(Keys.RETURN)
 time.sleep(2)
