@@ -36,10 +36,10 @@ try:
     elem=WebDriverWait(driver,delay).until(EC.presence_of_element_located((By.CLASS_NAME,"_2s25")))
     time.sleep(5);
     elem.click();
-    print ("Successfully Logged in");
+    print("Successfully Logged in");
     time.sleep(2)
 except TimeoutException:
-    print ("Timeout or wrong email/password") ;
+    print("Timeout or wrong email/password") ;
     driver.close();
 
 def post_checker(post):
@@ -170,7 +170,7 @@ try:
     print("Total ", count, " posts found ")
     
      
-    print ("Successfully liked and wrote the comment on relevant posts, ",no_of_postliked)
+    print("Successfully liked and wrote the comment on relevant posts, ",no_of_postliked)
 except TimeoutException:
-    print ("Timeout") 
+    print("Timeout")
         
