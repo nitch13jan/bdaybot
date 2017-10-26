@@ -18,7 +18,7 @@ elem.send_keys("bdaybottest@gmail.com")
 elem = driver.find_element_by_name("pass")
 elem.clear()
 elem.send_keys("12345679")
-elem.send_keys(Keys.RETURN)
+elem.send_keys(Keys.ENTER)
 delay = 30
 
 try:
