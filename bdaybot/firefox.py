@@ -71,16 +71,15 @@ try:
 
     print("Searching for all the related post....\n This may take time depending on the number of bday post.")
     while 1:
-          
-		try:
-        	# print("Now it will search for _44b2")   
-			p = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, '_44b2')))
-			driver.execute_script("return arguments[0].scrollIntoView();", p )
-			driver.execute_script("window.scrollBy(0, -100);")
-			p.click()
-			print("Found some more post.... plz wait....")
-			# driver.execute_script("window.scrollTo(0, (scr++)*document.body.scrollHeight);")
-			# driver.find_element(By.CLASS_NAME,"_44b2").click()
+        try:
+            # print("Now it will search for _44b2")   
+            p = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, '_44b2')))
+            driver.execute_script("return arguments[0].scrollIntoView();", p )
+            driver.execute_script("window.scrollBy(0, -100);")
+            p.click()
+            print("Found some more post.... plz wait....")
+            # driver.execute_script("window.scrollTo(0, (scr++)*document.body.scrollHeight);")
+            # driver.find_element(By.CLASS_NAME,"_44b2").click()
           
         # print("Check if page getting refreshed!..... input 1 to continue....")
         # inp=input()
@@ -116,54 +115,54 @@ try:
                      
                     try:   
                         sect=post.find_element_by_class_name("UFICommentContainer")
-                   		#time.sleep(2)
-                   		print("Sect found!")
-                  	except NoSuchElementException:
-                   		print(" NoSuchElementException Thrown while searching UFIcomeent Container")
-                  	try: 
-                   		p=sect.find_element_by_class_name("UFIInputContainer")
-                   		p.click()
+                        #time.sleep(2)
+                        print("Sect found!")
+                    except NoSuchElementException:
+                        print(" NoSuchElementException Thrown while searching UFIcomeent Container")
+                    try: 
+                        p=sect.find_element_by_class_name("UFIInputContainer")
+                        p.click()
 
-                   '''try:
-                    p.find_element_by_class_name("_1osa mentionsHidden").click()
-                   except NoSuchElementException:
-                    print(" NoSuchElementException Thrown while searching _1osa mentionsHidden")'''   
-                   	print("clicked on UFIInput container")
+                    # try:
+                    # p.find_element_by_class_name("_1osa mentionsHidden").click()
+                    # except NoSuchElementException:
+                    # print(" NoSuchElementException Thrown while searching _1osa mentionsHidden") 
+                        print("clicked on UFIInput container")
                    
-                  	except NoSuchElementException:
-                   		print(" NoSuchElementException Thrown while searching UFIInput Container")
+                    except NoSuchElementException:
+                        print(" NoSuchElementException Thrown while searching UFIInput Container")
 
                  
-                  	for x in range(0,50):
-                   		try:
-                    		comm=p.find_element_by_class_name("_5rpb")
-                    		#comm=WebDriverWait(driver,10).until(p.find_element_by_class_name("_5rpb"))
+                    for x in range(0,50):
+                        try:
+                            comm=p.find_element_by_class_name("_5rpb")
+                            # comm=WebDriverWait(driver,10).until(p.find_element_by_class_name("_5rpb"))
                    
                     
-                   		except NoSuchElementException:
-                    		#print(" NoSuchElementException Thrown while searching _5rpb")
-                    		p.click()
-                    		continue
-                   		except ElementNotVisibleException:
-                    		print(" ElementNotVisibleException Thrown while searching _5rpb")
-                   		except InvalidElementStateException:
-                    		print(" InvalidElementStateException Thrown while searching _5rpb")
-                   		except MoveTargetOutOfBoundsException:
-                    		print(" MoveTargetOutOfBoundsException Thrown while searching _5rpb")
-                   		except StaleElementReferenceException:
-                    		print(" StaleElementReferenceException Thrown while searching _5rpb") 
+                        except NoSuchElementException:
+                            #print(" NoSuchElementException Thrown while searching _5rpb")
+                            p.click()
+                            continue
+                        except ElementNotVisibleException:
+                            print(" ElementNotVisibleException Thrown while searching _5rpb")
+                        except InvalidElementStateException:
+                            print(" InvalidElementStateException Thrown while searching _5rpb")
+                        except MoveTargetOutOfBoundsException:
+                            print(" MoveTargetOutOfBoundsException Thrown while searching _5rpb")
+                        except StaleElementReferenceException:
+                            print(" StaleElementReferenceException Thrown while searching _5rpb") 
 
-                   		else:
-                    		print("No exception raised")   
-                    		comm.click()
-                    		print("_5rpb found.....")
-                    		comm.send_keys(comment+Keys.RETURN)
-                    		print("1 comment done\n")
-                    		break
+                        else:
+                            print("No exception raised")   
+                            comm.click()
+                            print("_5rpb found.....")
+                            comm.send_keys(comment+Keys.RETURN)
+                            print("1 comment done\n")
+                            break
                    
-                  	post.find_element_by_xpath(".//a[@class='UFILikeLink _4x9- _4x9_ _48-k']").click()
-                  	print("1 like done.... ")
-                  	no_of_postliked+=1
+                    post.find_element_by_xpath(".//a[@class='UFILikeLink _4x9- _4x9_ _48-k']").click()
+                    print("1 like done.... ")
+                    no_of_postliked+=1
                   
                   
                 #print("1 like done! \n")
