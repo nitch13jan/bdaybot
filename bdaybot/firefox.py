@@ -1,27 +1,30 @@
-from selenium import webdriver
-import time
 import random
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+import time
+
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import ElementNotVisibleException
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import ElementNotVisibleException,\
+    NoSuchElementException, TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from facebook_auth import login
 
 #print("Welcome! Kindly fill the \nrequired fields for login when it loads\nand press the login button")
 print("opening site.....")
 
+credentials = login()
 driver = webdriver.Firefox()
 driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 time.sleep(5)
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys("botbday@gmail.com")
+elem.send_keys(credentials["login"])
 elem = driver.find_element_by_name("pass")
 elem.clear()
-elem.send_keys("botbday56"+Keys.RETURN)
+elem.send_keys(credentials["login"] + Keys.RETURN)
 #print("Please Enter Your Username and Password there and\n press the login button...... (30 sec wait time) ")
 elem.send_keys(Keys.RETURN)
 time.sleep(2)

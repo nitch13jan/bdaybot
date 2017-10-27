@@ -1,23 +1,25 @@
-from selenium import webdriver
 import time
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException   
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from facebook_auth import login
 
 
-
+credentials = login()
 driver = webdriver.Chrome()
 driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys("bdaybottest@gmail.com")
+elem.send_keys(credentials["login"])
 elem = driver.find_element_by_name("pass")
 elem.clear()
-elem.send_keys("12345679")
+elem.send_keys(credentials["password"])
 elem.send_keys(Keys.RETURN)
 delay = 30
 
