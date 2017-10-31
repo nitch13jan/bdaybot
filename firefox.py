@@ -14,7 +14,7 @@ driver.get("http://www.facebook.com")
 assert "Facebook" in driver.title
 elem = driver.find_element_by_name("email")
 elem.clear()
-elem.send_keys("bdaybottest@gmail.com")
+elem.send_keys("botbday@gmail.com")
 elem = driver.find_element_by_name("pass")
 elem.clear()
 elem.send_keys("12345679")
