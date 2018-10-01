@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='bdaybot',
-    version= ,
+    version=1,
     packages=['bdaybot'],
     url='https://github.com/nitinkgp23/bdaybot',
     license='',
